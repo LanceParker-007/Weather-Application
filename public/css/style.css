@@ -64,6 +64,11 @@ p {
 /*------- I added --------*/
 .innerImage{
   height: 10rem;
+  padding-left: 20px;
+}
+
+.resinnerImage{
+  height: 10rem;
 }
 
 /* Bootstrap form */
