@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+body {
+  margin:0;
+  padding: 0;
+}
+
+h1 {
+    font-family: 'Tourney', cursive;
+    font-weight:300;
+    letter-spacing: 1px;
+    font-size: 60px;
+}
+p {
+    font-family: 'Grandstander', cursive;
+    letter-spacing: 1px;
+    font-size:14px;
+    color: #333333;
+}
+.res{
+  font-family: 'Courier New', Courier, monospace; 
+  color: black;
+}
+
+.header {
+    padding-top: 50px;
+    position:relative;
+    text-align:center;
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    color:white;
+}
+
+.inner-header {
+  height:20vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:3vh;
+  margin-bottom:-25px; /*Fix for safari gap*/
+  min-height:30px;
+  max-height:60px;
+}
+
+.content {
+  position:relative;
+  height:10vh;
+  text-align:center;
+  background-color: white;
+}
+
+/*------- I added --------*/
+.innerImage{
+  height: 10rem;
+}
+
+/* Bootstrap form */
+.container{
+    margin-bottom: 10px;
+}
+
+.navbar{
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30vh;
+    border-radius: 20px;
+    background: #FFd615;
+}
+.extra{
+  width: 100%;
+}
+
+.formFont{
+  font-family: 'Carter One', cursive;
+}
+/* ---------------------------------------- */
+
+.footerContent{
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: 1s;
+  animation-duration: 4s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: 1s;
+  animation-duration: 6s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .header{
+    padding-top: 60px;
+  }
+
+  .container{
+    margin-bottom: 20px;
+  }
+
+  .innerImage{
+    margin-top: 0px;
+    /* padding-left: 20px; */
+    height: 10rem;
+  }
+
+  .waves {
+    margin-bottom: -20px;
+    height:25px;
+    min-height:5px;
+  }
+  .content {
+    height:12vh;
+  }
+  h1 {
+    font-size:35px;
+    margin-bottom: 20px;
+  }
+}
