@@ -10,33 +10,40 @@
     <link rel="shortcut icon" href="/images/favIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/newsLetterStyle.css">
-    <title>Application</title>
+    <title>Weather Application</title>
 </head>
 
 <body>
     <div class="header ">
 
         <!-- Form section -->
-        <h1>Advanced Weather <img src="/images/favIcon.png" alt="favicon" style="height: 50px;"> Application</h1>
+        <h1>WEATHER APPLICATION <img src="/images/favIcon.png" alt="favicon" style="height: 50px;"></h1>
         <div class="container">
             <nav class="navbar extra navbar-light justify-content-center">
-                <b>
-                    <p class="res">The temperature in <%= query %>
-                            is <%= temp %>° Celcius.</p>
-                </b>
-                <br>
-                <b>
-                    <p class="res"> The weather is currently <%= description %>. </p>
-                </b>
+                <form>
+                    <b>
+                        <p class="res text-capitalize">The temperature in <%= query %>
+                                is <span class="text-decoration-underline">
+                                    <%= temp %>° Celcius
+                                </span>.</p>
+                    </b>
+                    <b>
+                        <p class="res text-capitalize"> The weather is currently <span
+                                class="text-decoration-underline">
+                                <%= description %>
+                            </span>.</p>
+                    </b>
+                </form>
             </nav>
-            <div class="inner-header flex">
+            <div class="inner-header flex mt-4">
                 <nav class="navbar navbar-light justify-content-center">
                     <img id="i" src="" alt="opm1" class="img-fluid resinnerImage">
                 </nav>
             </div>
         </div>
-
-
+        <form action="/failure" method="POST">
+            <button class="btn btn-outline-dark mt-4">Search another place</button>
+        </form>
         <!--Waves Container-->
         <div>
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -54,7 +61,6 @@
             </svg>
         </div>
         <!--Waves end-->
-
     </div>
     <!--Header ends-->
 
