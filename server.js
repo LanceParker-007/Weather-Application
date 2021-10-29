@@ -2,10 +2,10 @@ const express = require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
 const client = require("@mailchimp/mailchimp_marketing");
-
-const weatherApiKey = Imp.apiKey;
-const mailchimpApi = Imp.mailchimpApi;
-const mailchimpListKey = Imp.mailchimpListKey;
+require('dotenv').config();
+const weatherApiKey = process.env.apiKey;
+const mailchimpApi = process.env.mailchimpApi;
+const mailchimpListKey = process.env.mailchimpListKey;
 
 const app = express();
 
