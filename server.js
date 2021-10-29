@@ -3,6 +3,10 @@ const https = require("https");
 const bodyParser = require("body-parser");
 const client = require("@mailchimp/mailchimp_marketing");
 
+const weatherApiKey = Imp.apiKey;
+const mailchimpApi = Imp.mailchimpApi;
+const mailchimpListKey = Imp.mailchimpListKey;
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +19,7 @@ app.set('views', __dirname);
 
 // Mailchimp
 client.setConfig({
-    apiKey: "9f6535c6b3b4129fef3c753082fdda5a-us5",
+    apiKey: mailchimpApi,
     server: "us5",
 });
 
@@ -27,7 +31,7 @@ app.get("/", function (req, res) {
 // Weather post request
 app.post("/", function (req, res) {
     const query = req.body.cityName;
-    const apiKey = "d891c1ea4c2944cc7638158f7da06409";
+    const apiKey = weatherApiKey;
     const unit = "metric";
     const url = "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&units=" + unit + "&q=" + query;// we have to use hhtps://
 
@@ -60,7 +64,7 @@ app.post("/subscribe", function (req, res) {
 
     const jsonData = JSON.stringify(data);
 
-    const url = "https://us5.api.mailchimp.com/3.0/lists/f3262be112";
+    const url = "https://us5.api.mailchimp.com/3.0/lists/" + mailchimpListKey;
 
     const options = {
         method: "POST",
