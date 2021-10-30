@@ -2,6 +2,7 @@ const express = require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
 const client = require("@mailchimp/mailchimp_marketing");
+// dotenv file
 require('dotenv').config();
 const weatherApiKey = process.env.apiKey;
 const mailchimpApi = process.env.mailchimpApi;
@@ -68,7 +69,7 @@ app.post("/subscribe", function (req, res) {
 
     const options = {
         method: "POST",
-        auth: "lance1:9f6535c6b3b4129fef3c753082fdda5a-us5",
+        auth: "lance1:" + mailchimpApi,
     }
 
     const request = https.request(url, options, function (response) {
