@@ -4,9 +4,9 @@ const bodyParser = require("body-parser");
 const client = require("@mailchimp/mailchimp_marketing");
 // dotenv file
 require('dotenv').config();
-const weatherApiKey = "d891c1ea4c2944cc7638158f7da06409";
-const mailchimpApi = "d2ab2d9aa53ceca8919516c67d444e6c-us5";
-const mailchimpListKey = "f3262be112";
+const weatherApiKey = process.env.apiKey;
+const mailchimpApi = process.env.mailchimpApi;
+const mailchimpListKey = process.env.mailchimpListKey;
 
 const app = express();
 
